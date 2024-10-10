@@ -5,6 +5,9 @@ The Airware Services Library connects a passenger with Airport and Airline Infor
 
 The services assist a passenger during check-in and travel, providing real-time updates for bag drop location, boarding gate, queue times and baggage collection points.
 
+## Documentation 
+https://airwaresolutionslimited.github.io/AirwareServicesLibrary/
+
 ## Installation
 
 [Installation for iOS](https://github.com/AirwareSolutionsLimited/Podspecs/blob/main/InstallationIos.md)
