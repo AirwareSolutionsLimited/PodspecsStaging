@@ -58,7 +58,7 @@ security set-internet-password-partition-list -S apple-tool:,apple: -s "github.c
 
 Add the following lines to your project's Podfile.
 ```rb
-source 'https://github.com/CocoaPods/Specs.git'
+source 'https://cdn.cocoapods.org'
 source 'https://github.com/AirwareSolutionsLimited/Podspecs.git'
 
 platform :ios, '13.1'
