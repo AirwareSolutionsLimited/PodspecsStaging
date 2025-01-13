@@ -18,7 +18,7 @@ git config --global credential.https://github.com/AirwareSolutionsLimited.passwo
 
 ### Checkout the sample app source code
 ```
-git clone https://github.com/AirwareSolutionsLimited/AirwareServicesAndroid
+git clone https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode
 ```
 
 ### Update the gradle.properties of the sample project
@@ -27,7 +27,7 @@ git clone https://github.com/AirwareSolutionsLimited/AirwareServicesAndroid
 AIRWARE_GPR_USER=<YOUR_AIRWARE_GPR_USER> 
 AIRWARE_GPR_TOKEN=<YOUR_AIRWARE_GPR_TOKEN>
 ```
-Build and run the AirwareServicesAndroid project
+Build and run the AndroidSampleCode projects
 
 ## Gradle configuration in your own project
 
@@ -37,7 +37,7 @@ Add the following lines to your project's build.gradle or settings.gradle file
 ```gradle
 repositories {
     maven {
-        url = uri("https://maven.pkg.github.com/airwaresolutionslimited/serviceslibraryandroid")
+        url = uri("https://maven.pkg.github.com/airwaresolutionslimited/airwareserviceslibrary")
         credentials {
             // === GITHUB PACKAGE REPOSITORY USERNAME AND TOKEN PROVIDED BY AIRWARE ===
             username = (project.findProperty("AIRWARE_GPR_USER") ?: System.getenv("AIRWARE_GPR_USER")).toString()
@@ -47,16 +47,19 @@ repositories {
 }
 
 dependencies {  
-    implementation("com.airware:services-library-android:1.0.0")
+    implementation("com.airware:core-services-android:1.0.0")
+    implementation("com.airware:location-services-android:1.0.0")
+    implementation("com.airware:infrastructure-services-android:1.0.0")
 }
 ```
 
 # Use the library in your Android project
-To start using the library in your Android project, add
-**import** com.airware.services.AirwareServices
+To start using the library in your Android project, add imports for the services you use
+**import** com.airware.services.locationservices.AirwareLocationService
+**import** com.airware.services.AirwareInfrastructureService
 
 # Sample app
-Source code is provided for sample apps for [iOS (Swift)](https://github.com/AirwareSolutionsLimited/AirwareServicesIos) and [Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesAndroid) which demonstrate use of the library.
+Source code is provided for sample apps for [iOS (Swift) and Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode) which demonstrate use of the library.
 
 # Documentation
 Documentation for the Library API is available with the source and online [AirwareServicesLibrary (airwaresolutionslimited.github.io)](https://airwaresolutionslimited.github.io/AirwareServicesLibrary/)

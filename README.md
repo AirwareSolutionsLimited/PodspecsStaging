@@ -1,9 +1,13 @@
 
 # Module Airware Services Library
 
-The Airware Services Library connects a passenger with Airport and Airline Information services.
+The Airware Services Libraries connect a passenger with Airport and Airline services.
 
 The services assist a passenger during check-in and travel, providing real-time updates for bag drop location, boarding gate, queue times and baggage collection points.
+
+Location services provide proximity alerts when a passenger is in a baggage processing area.
+
+Infrastructure services provide access to Bag Tag Printing, Boarding Pass Printing, and Weigh Scale appliances.
 
 ## Documentation 
 https://airwaresolutionslimited.github.io/AirwareServicesLibrary/
@@ -15,11 +19,6 @@ https://airwaresolutionslimited.github.io/AirwareServicesLibrary/
 [Installation for Android](https://github.com/AirwareSolutionsLimited/Podspecs/blob/main/InstallationAndroid.md)
 
 ## Sample app 
-Source code is provided for sample apps which demonstrate use of the library.
 
-[iOS (Swift)](https://github.com/AirwareSolutionsLimited/AirwareServicesIos)
-
-[Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesAndroid)
-
-
+Source code is provided for sample apps for [iOS (Swift) and Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode) which demonstrate use of the library.
 

@@ -21,14 +21,15 @@ git config --global credential.https://github.com/AirwareSolutionsLimited.passwo
 ### Checkout the sample app source code
 
 ```
-git clone https://github.com/AirwareSolutionsLimited/AirwareServicesIos
+git clone https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode
 ```
 
-### Update the podfiles in the sample app
+### CocoaPods Sample - update the podfiles in the sample app
+
 ```
-cd AirwareServicesIos
+cd AirwareServicesSampleCode/IosSampleCode
 pod install --repo-update
-pod update AirwareServicesLibrary
+pod update && pod install
 ```
 
 Then build and run the Sample.xcworkspace project in XCode 15+
@@ -56,31 +57,33 @@ security set-internet-password-partition-list -S apple-tool:,apple: -s "github.c
 
 ### Add the Airware Repository and Library to your Podfile
 
-Add the following lines to your project's Podfile.
+Add the following lines to your project's Podfile for the frameworks you use
 ```rb
 source 'https://cdn.cocoapods.org'
 source 'https://github.com/AirwareSolutionsLimited/Podspecs.git'
 
-platform :ios, '13.1'
-target 'Sample' do
+platform :ios, '14'
+target 'YourApplicationTarget' do
   use_frameworks!
-  pod "AirwareServicesLibrary"
+  pod "AirwareLocationServices"
+  pod "AirwareInfrastructureServices"
 end
 ```
 
 Run the following commands to install the Pod.
 ```batch
 pod install --repo-update
-pod update AirwareServicesLibrary
+pod update && pod install
 ```
 
 # Use the library in your iOS project
 
-To start using the library in your iOS Swift project, add
-**import** AirwareServicesLibrary
+To start using the library in your iOS Swift project, add imports for the frameworks you use
+**import** AirwareLocationServices
+**import** AirwareInfrastructureServices
 
 # Sample app
-Source code is provided for sample apps for [iOS (Swift)](https://github.com/AirwareSolutionsLimited/AirwareServicesIos) and [Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesAndroid) which demonstrate use of the library.
+Source code is provided for sample apps for [iOS (Swift) and Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode) which demonstrate use of the library.
 
 # Documentation
 Documentation for the Library API is available with the source and online [AirwareServicesLibrary (airwaresolutionslimited.github.io)](https://airwaresolutionslimited.github.io/AirwareServicesLibrary/)
