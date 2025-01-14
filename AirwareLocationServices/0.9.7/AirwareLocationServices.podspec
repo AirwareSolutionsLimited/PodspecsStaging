@@ -9,7 +9,7 @@ Pod::Spec.new do |spec|
                 
                 
     spec.ios.deployment_target    = '14'
-    spec.dependency 'KMPNativeCoroutinesCombine', '1.0.0-ALPHA-37'
+                
                 
                 
                 
