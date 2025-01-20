@@ -9,6 +9,8 @@ Location services provide proximity alerts when a passenger is in a baggage proc
 
 Infrastructure services provide access to Bag Tag Printing, Boarding Pass Printing, and Weigh Scale appliances.
 
+Identity services provide identity and online visa checks.
+
 ## Documentation 
 https://airwaresolutionslimited.github.io/AirwareServicesLibrary/
 
