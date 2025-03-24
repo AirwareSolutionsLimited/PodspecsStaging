@@ -1,12 +1,12 @@
 Pod::Spec.new do |spec|
-    spec.name                     = 'AirwareLocationServices'
-    spec.version                  = '1.0.0'
+    spec.name                     = 'AirwareIdentityServices'
+    spec.version                  = '0.0.8'
     spec.homepage                 = 'https://github.com/AirwareSolutionsLimited/PodspecsStaging'
     spec.source                   = { :http=> ''}
     spec.authors                  = { "Airware" => "mobile@airware.aero" }
     spec.license                  = 'Apache License, Version 2.0'
-    spec.summary                  = 'AirwareLocationServices Library'
-    spec.vendored_frameworks      = 'AirwareLocationServices.xcframework'
+    spec.summary                  = 'AirwareIdentityServices Library'
+    spec.vendored_frameworks      = 'AirwareIdentityServices.xcframework'
                 
     spec.ios.deployment_target    = '14'
                 
@@ -14,7 +14,8 @@ Pod::Spec.new do |spec|
                 
                 
                 
+    spec.resources = ['build/compose/cocoapods/compose-resources']
     spec.swift_version = '5.0'
     spec.libraries = 'c++', 'sqlite3'
-    spec.resource_bundles = {'AirwareLocationServices_Privacy' => ['PrivacyInfo.xcprivacy']}
+    spec.resource_bundles = {'AirwareIdentityServices_Privacy' => ['PrivacyInfo.xcprivacy']}
 end

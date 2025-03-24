@@ -16,8 +16,6 @@ git config --global credential.https://github.com/AirwareSolutionsLimited.userna
 git config --global credential.https://github.com/AirwareSolutionsLimited.password <YOUR_AIRWARE_GPR_PASSWORD>
 ```
 
-
-
 ### Checkout the sample app source code
 
 ```
@@ -32,28 +30,9 @@ pod install --repo-update
 pod update && pod install
 ```
 
-Then build and run the Sample.xcworkspace project in XCode 15+
-
-## Swift (Swift Package Manager) installation in your own project
-
-Add in XCode by going to `File` -> `Add Packages` -> `Add Package Dependency...` and enter the URL:
-```
-https://github.com/AirwareSolutionsLimited/AirwareServicesLibrary.git
-```
-
-The xcodebuild command and Xcode will try to authenticate using a GitHub access token stored in the keychain. (This is because the library is distributed as a binary framework).
-
-To download the binary framework, you'll need to put a Github access token to the keychain.
-In XCode, you can add your <YOUR_AIRWARE_GPR_USER> and <YOUR_AIRWARE_GPR_PASSWORD> at the time that you add the package to your project.
-
-On your CI system, add the credentials to the keychain as follows:
-```
-security add-internet-password -a "<YOUR_AIRWARE_GPR_USER>" -s "github.com" -r htps -w "<YOUR_AIRWARE_GPR_PASSWORD>" -T "$(xcode-select -p)/usr/bin/xcodebuild" -T "/usr/bin/xcodebuild" -U login.keychain
-security set-internet-password-partition-list -S apple-tool:,apple: -s "github.com" login.keychain
-```  
+Then build and run the Sample-Cocoapods.xcworkspace project in XCode 15+
 
 ## Swift (CocoaPods) installation in your own project
-
 
 ### Add the Airware Repository and Library to your Podfile
 
@@ -78,9 +57,41 @@ pod update && pod install
 
 # Use the library in your iOS project
 
-To start using the library in your iOS Swift project, add imports for the frameworks you use
+To start using the library in your iOS Swift project, add imports for the frameworks you use.
+
 **import** AirwareLocationServices
+
 **import** AirwareInfrastructureServices
+
+
+## Swift Package Manager packages installation
+
+As of February 2025, Airware frameworks use the Git LFS filesystem to store large objects.
+
+This means that until https://github.com/swiftlang/swift-package-manager/issues/8233?t is resolved, Swift Packages need to be manually downloaded outside of XCode and installed using 
+`Add Local`.
+
+The Airware Services Library packages should be checked out using the git command line with git-lfs pre-installed.
+
+If you don't already have git lfs installed, install on MacOSX using brew:
+```
+brew install git-lfs
+git lfs install
+```
+
+Next clone the Airware Services Libraries from the main branch into a folder that is relative to your own source code.
+
+`git clone https://github.com/AirwareSolutionsLimited/AirwareServicesLibrary.git`
+
+Open your project in XCode, and choose `File` -> `Add Packages` -> `Add Package Dependency...` 
+
+Choose `Add Local` from the bottom of the dialog and browse to the folder where you downloaded the Airware Services Library.
+
+Add the AirwareInfrastructureServices package to any projects using Infrastructure.
+
+Add the AirwareLocationServices package to projects requiring Location Services.
+
+Add the AirwareCodeScanner and AirwareIdentityServices package to projects requiring Identity Services.
 
 # Sample app
 Source code is provided for sample apps for [iOS (Swift) and Android (Kotlin)](https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode) which demonstrate use of the library.
