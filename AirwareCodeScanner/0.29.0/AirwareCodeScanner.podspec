@@ -1,8 +1,8 @@
 Pod::Spec.new do |spec|
     spec.name                     = 'AirwareCodeScanner'
-    spec.version                  = '0.12.0'
+    spec.version                  = '0.29.0'
     spec.homepage                 = 'https://github.com/AirwareSolutionsLimited/PodspecsStaging'
-    spec.source                   = { :git => "https://github.com/AirwareSolutionsLimited/AirwareServicesStaging.git", :tag => "AirwareCodeScanner-0.12.0" }
+    spec.source                   = { :git => "https://github.com/AirwareSolutionsLimited/AirwareServicesStaging.git", :tag => "AirwareCodeScanner-0.29.0" }
     spec.authors                  = { "Airware" => "mobile@airware.aero" }
     spec.license                  = 'Apache License, Version 2.0'
     spec.summary                  = 'AirwareCodeScanner Library'
