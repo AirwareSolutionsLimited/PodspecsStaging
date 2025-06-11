@@ -8,6 +8,18 @@ Use the [contact form](https://airware.aero/contact/) to request a token.
 
 ### Add your scoped access token to git credentials to access the source and packages
 
+*NOTE* 
+Access is via user and password tokens.
+```
+For all access via git (sample source code, iOS pod and swift package frameworks), use <YOUR_AIRWARE_GPR_PASSWORD>
+<YOUR_AIRWARE_GPR_USER>
+<YOUR_AIRWARE_GPR_PASSWORD>
+
+To access the Android maven packages (gradle) use <YOUR_AIRWARE_GPR_TOKEN>
+<YOUR_AIRWARE_GPR_USER>
+<YOUR_AIRWARE_GPR_TOKEN>
+```
+
 Store the tokens in whichever manner fits your practices for checking out code and building on CI; 
 e.g. environment variables or secure files or local.properties
 

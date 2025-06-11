@@ -8,6 +8,18 @@ Use the [contact form](https://airware.aero/contact/) to request a token.
 
 ### Add your scoped access token to git credentials to access the source and library files
 
+*NOTE* 
+Access is via user and password tokens.
+```
+For all access via git (all sample source code, and the library iOS pod and swift package frameworks), use <YOUR_AIRWARE_GPR_PASSWORD>
+<YOUR_AIRWARE_GPR_USER>
+<YOUR_AIRWARE_GPR_PASSWORD>
+
+To access the Android maven packages (gradle) use <YOUR_AIRWARE_GPR_TOKEN>
+<YOUR_AIRWARE_GPR_USER>
+<YOUR_AIRWARE_GPR_TOKEN>
+```
+
 Store the tokens in whichever manner fits your practices for checking out code and building on CI; 
 e.g. environment variables or secure files.
 
@@ -21,6 +33,26 @@ git config --global credential.https://github.com/AirwareSolutionsLimited.passwo
 ```
 git clone https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode
 ```
+
+For local developer systems, it is recommended you checkout using the Git CLI initially.
+
+If you are prompted at the commandline for your password, paste in `<YOUR_AIRWARE_GPR_PASSWORD>` from above.
+
+If you are having issues checking out, or would like to use sourcetree or other VCS, edit the `~/.gitconfig` file in your home folder.
+
+Your `~/.gitconfig` file should contain the entries:
+```
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[credential "https://github.com/AirwareSolutionsLimited"]
+	username = <YOUR_AIRWARE_GPR_USER>
+	helper = "!echo password=<YOUR_AIRWARE_GPR_PASSWORD>; echo"
+	password = <YOUR_AIRWARE_GPR_PASSWORD>
+```
+
 
 ### CocoaPods Sample - update the podfiles in the sample app
 
@@ -44,8 +76,8 @@ source 'https://github.com/AirwareSolutionsLimited/Podspecs.git'
 platform :ios, '14'
 target 'YourApplicationTarget' do
   use_frameworks!
-  pod "AirwareLocationServices"
-  pod "AirwareInfrastructureServices"
+  pod "AirwareServicesLibrary"
+  pod "AirwareIdentityServices"
 end
 ```
 
@@ -55,14 +87,20 @@ pod install --repo-update
 pod update && pod install
 ```
 
+Or run the following commands to update the Pods.
+```batch
+pod repo update && pod update
+```
+
 # Use the library in your iOS project
 
 To start using the library in your iOS Swift project, add imports for the frameworks you use.
 
-**import** AirwareLocationServices
+**import** AirwareServicesLibrary.AirwareLocationServices
 
-**import** AirwareInfrastructureServices
+**import** AirwareServicesLibrary.AirwareInfrastructureServices
 
+**import** AirwareIdentityServices
 
 ## Swift Package Manager packages installation
 
