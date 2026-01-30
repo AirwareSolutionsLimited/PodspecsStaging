@@ -5,6 +5,8 @@ The Airware Services Libraries connect a passenger with Airport and Airline serv
 
 The services assist a passenger during check-in and travel, providing real-time updates for bag drop location, boarding gate, queue times and baggage collection points.
 
+Information services provide boarding gate, security queue time, and baggage collection point for the passenger flight.
+
 Location services provide proximity alerts when a passenger is in a baggage processing area.
 
 Infrastructure services provide access to Bag Tag Printing, Boarding Pass Printing, and Weigh Scale appliances.

@@ -59,9 +59,9 @@ repositories {
 }
 
 dependencies {  
-    implementation("com.airware:core-services-android:1.0.0")
-    implementation("com.airware:location-services-android:1.0.0")
-    implementation("com.airware:infrastructure-services-android:1.0.0")
+    implementation("com.airware:core-services-android:<version>")
+    implementation("com.airware:location-services-android:<version>")
+    implementation("com.airware:infrastructure-services-android:<version>")
 }
 ```
 

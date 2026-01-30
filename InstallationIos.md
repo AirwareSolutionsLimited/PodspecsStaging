@@ -77,7 +77,6 @@ platform :ios, '14'
 target 'YourApplicationTarget' do
   use_frameworks!
   pod "AirwareServicesLibrary"
-  pod "AirwareIdentityServices"
 end
 ```
 
@@ -100,7 +99,7 @@ To start using the library in your iOS Swift project, add imports for the framew
 
 **import** AirwareServicesLibrary.AirwareInfrastructureServices
 
-**import** AirwareIdentityServices
+**import** AirwareServicesLibrary.AirwareIdentityServices
 
 ## Swift Package Manager packages installation
 
