@@ -7,10 +7,19 @@
 
 ## iOS Code Migration for Airware Services Library 1.0.20 (or earlier) to 1.0.22+ (February 2026)
 
-* Pod and package files are now merged into the single AirwareServicesLibrary umbrella package
 * Support for x86_64 Intel simulators is removed
 
-In yor
+* Pod and package files are now merged into the single AirwareServicesLibrary umbrella package
+
+- In your Podfile replace any pod AirwareIdentityService and pod AirwareCodeScanner lines with 
+**pod AirwareServicesLibrary**
+
+- In your Swift package replace AirwareIdentityService and AirwareCodeScanner with
+**AirwareServicesLibrary**
+
+- Replace all import AirwareIdentityService directives with 
+**import AirwareServicesLibrary.AirwareIdentityService**
+
 
 ## Android Code Migration for Appliance API 1.4.6 -> Infrastructure and Location Services Services 1.x.x (January 2025)
 

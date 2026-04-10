@@ -11,13 +11,18 @@ Use the [contact form](https://airware.aero/contact/) to request a token.
 *NOTE* Access for download and update of the libraries and sample code is via user and password tokens.
 
 ```
-For all access via git (all sample source code, and the library iOS pod and swift package frameworks), use <YOUR_AIRWARE_GPR_PASSWORD>
+For all access via git (all sample source code, and the library iOS pod frameworks), use <YOUR_AIRWARE_GPR_PASSWORD>
 <YOUR_AIRWARE_GPR_USER>
 <YOUR_AIRWARE_GPR_PASSWORD>
 
-To access the Android maven packages (gradle) use <YOUR_AIRWARE_GPR_TOKEN>
+To access the Android maven packages (gradle) use <YOUR_AIRWARE_GPR_TOKEN> in build.gradle.kts
 <YOUR_AIRWARE_GPR_USER>
 <YOUR_AIRWARE_GPR_TOKEN>
+
+To add Swift packages (if prompted via XCode) use <YOUR_AIRWARE_GPR_TOKEN>
+<YOUR_AIRWARE_GPR_USER>
+<YOUR_AIRWARE_GPR_TOKEN>
+
 ```
 
 Store the tokens as required for how you manage our libraries and updates. 
@@ -89,19 +94,20 @@ pod repo update && pod update
 
 ## Swift Package Manager installation
 
-Open your project in XCode, and choose File -> Add Packages -> Add Package Dependency and specify https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode as the url
+Open your project in XCode, and choose File -> Add Packages -> Add Package Dependency and paste the url https://github.com/AirwareSolutionsLimited/AirwareServicesSampleCode into the search box
 
 
 If you set the credentials in the previous steps, you should not be prompted for a username and password; however some SPM configurations required an additional ~/.netrc file entry.
 
-If prompted via XCode, set these as the provided <YOUR_AIRWARE_GPR_USER> and <YOUR_AIRWARE_GPR_PASSWORD>.
+If prompted via XCode, set these as the provided <YOUR_AIRWARE_GPR_USER> and <YOUR_AIRWARE_GPR_TOKEN>.
 
-Add the AirwareServicesLibrary package to the project
+- Add the AirwareServices package to the project
+- Add the AirwareServicesLibrary to the target framework
 
 
 # Use the library in your iOS project
 
-To start using the library in your iOS Swift project, add imports for the frameworks you use.
+To start using the library in your iOS Swift project, add imports for the services you use.
 
 **import** AirwareServicesLibrary.AirwareLocationServices
 
